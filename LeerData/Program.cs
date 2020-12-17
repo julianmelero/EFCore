@@ -18,6 +18,15 @@ namespace LeerData
                     Console.WriteLine(curso.Titulo + " | " + curso.Descripcion);                    
                 }
 
+                // Cursos con sus precios
+                
+                var CursoPrecio = db.Curso.Inlcude( p => p.PrecioPromocion).AsNoTracking();
+                foreach (var curso in CursoPrecio)
+                {
+                    Console.WriteLine(curso.PrecioPromocion.PrecioActual);
+                }
+
+
             }
 
         }

@@ -14,7 +14,8 @@ namespace LeerData
             optionsBuilder.UseSqlServer(connectionString);
         }
 
-        public DbSet<Curso> Curso {get;set;}
+        public DbSet<Curso> Curso {get;set;}        
+        public DbSet<Precio> Precio {get;set;}
 
     }
 }
