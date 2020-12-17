@@ -1,4 +1,7 @@
 ﻿using System;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.SqlServer;
+
 
 namespace LeerData
 {
@@ -6,7 +9,17 @@ namespace LeerData
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("¡Hola! Preparando para ejecutar EF Core.");
+            
+            using(var db = new AppVentaCursosContext())
+            {
+                var cursos = db.Curso.AsNoTracking(); // Devuelve un IQueryable. Sirve para que no esté en caché y devuelva el dato de la BD
+                foreach (var curso in cursos)
+                {
+                    Console.WriteLine(curso.Titulo + " | " + curso.Descripcion);                    
+                }
+
+            }
+
         }
     }
 }

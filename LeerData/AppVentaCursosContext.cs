@@ -10,8 +10,11 @@ namespace LeerData
 
         // Crear Instancia hacia el Servidor
 
-        protected override void OnConfiguring(DBContextOptionsBuilder optionsBuilder) {
-            
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) {
+            optionsBuilder.UseSqlServer(connectionString);
         }
+
+        public DbSet<Curso> Curso {get;set;}
+
     }
 }
