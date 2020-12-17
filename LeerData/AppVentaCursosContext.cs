@@ -16,6 +16,7 @@ namespace LeerData
 
         public DbSet<Curso> Curso {get;set;}        
         public DbSet<Precio> Precio {get;set;}
+        public DbSet<Precio> Comentario {get;set;}
 
     }
 }

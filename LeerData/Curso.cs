@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace LeerData
 {
     public class Curso
@@ -9,6 +11,9 @@ namespace LeerData
         
         // Enlace con Precio
         public Precio PrecioPromocion{get;set;}
+
+        // Enlace con Comentario        
+        public ICollection<Comentario> ComentarioLista {get;set;}
 
     }
 }

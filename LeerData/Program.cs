@@ -18,7 +18,7 @@ namespace LeerData
                     Console.WriteLine(curso.Titulo + " | " + curso.Descripcion);                    
                 }
 
-                // Cursos con sus precios
+                // Cursos con sus precios ( UNO a UNO)
                 
                 var CursoPrecio = db.Curso.Include( p => p.PrecioPromocion).AsNoTracking();
                 foreach (var curso in CursoPrecio)
@@ -26,7 +26,16 @@ namespace LeerData
                     Console.WriteLine(curso.PrecioPromocion.PrecioActual);
                 }
 
-
+                // Curso con sus comentarios (UNO A MUCHOS)
+                
+                var CursoComentario = db.Curso.Include( c => c.ComentarioLista).AsNoTracking();
+                foreach(var curso in CursoComentario)
+                {
+                    Console.WriteLine(curso.Titulo) ;
+                    foreach(var comentario in curso.ComentarioLista) {
+                        Console.WriteLine("*******" + comentario.ComentarioTexto);
+                    }
+                }
             }
 
         }
