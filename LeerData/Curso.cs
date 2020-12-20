@@ -15,5 +15,7 @@ namespace LeerData
         // Enlace con Comentario        
         public ICollection<Comentario> ComentarioLista {get;set;}
 
+        public ICollection<CursoInstructor> InstructorLink {get;set;} 
+
     }
 }

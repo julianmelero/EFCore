@@ -36,6 +36,11 @@ namespace LeerData
                         Console.WriteLine("*******" + comentario.ComentarioTexto);
                     }
                 }
+
+                //var CursoInstructor = db.Curso.Include( i => i.InstructorId).AsNoTracking();
+
+
+                
             }
 
         }

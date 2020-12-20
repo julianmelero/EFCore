@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 namespace LeerData
 {
     public class Instructor
@@ -6,5 +7,8 @@ namespace LeerData
         public string Nombre { get; set; }
         public string Apellidos { get; set; }
         public string Grado { get; set; }
+        public byte[] Foto { get; set; }
+
+        public ICollection<CursoInstructor> CursoLink {get;set;}
     }
 }

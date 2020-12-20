@@ -14,9 +14,17 @@ namespace LeerData
             optionsBuilder.UseSqlServer(connectionString);
         }
 
+        // Para las PK que son FK en tablas intermedias
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.entity<CursoInstructor>().HasKey(ci => ci.CursoId, ci.InstructorId);
+        }
+
         public DbSet<Curso> Curso {get;set;}        
         public DbSet<Precio> Precio {get;set;}
-        public DbSet<Precio> Comentario {get;set;}
+        public DbSet<Comentario> Comentario {get;set;}
+        public DbSet<Instructor> Instructor {get;set;}
+        public DbSet<CursoInstructor> CursoInstructor {get;set;}
 
     }
 }
