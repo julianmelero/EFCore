@@ -17,7 +17,7 @@ namespace LeerData
         // Para las PK que son FK en tablas intermedias
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.entity<CursoInstructor>().HasKey(ci => ci.CursoId, ci.InstructorId);
+            modelBuilder.Entity<CursoInstructor>().HasKey(ci => new { ci.CursoId, ci.InstructorId});
         }
 
         public DbSet<Curso> Curso {get;set;}        
